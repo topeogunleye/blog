@@ -1,7 +1,7 @@
 # README
 ![](https://img.shields.io/badge/Microverse-blueviolet)
 
-# Hello Rails
+# Rails blog
 
 > My first rails project during Microverse.
 
