@@ -1,5 +1,4 @@
 require 'rails_helper'
-require_relative '../../app/controllers/blog_controller'
 require_relative '../../app/controllers/users_controller'
 
 RSpec.describe 'Users', type: :request do
