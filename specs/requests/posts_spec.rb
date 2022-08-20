@@ -4,23 +4,19 @@ require_relative '../../app/controllers/posts_controller'
 RSpec.describe 'Posts', type: :request do
   describe 'GET /posts' do
     before(:each) do
-      @user = create(:user)
-      @post = create(:post, user: @user)
+      get '/users/1/posts'
     end
 
-    it 'response status was correct' do
-      get posts_index_path
-      expect(response).to have_http_status(200)
-    end
-
-    it 'correct template was rendered.' do
-      get posts_index_path
+    it 'should render the correct template' do
       expect(response).to render_template(:index)
     end
 
-    it 'response body includes correct placeholder text.' do
-      get posts_index_path
-      expect(response.body).to include('There are no posts yet.')
+    it 'should have the correct placeholder text' do
+      expect(response.body).to include('This is posts index page ')
+    end
+
+    it 'should have a correct response status' do
+      expect(response).to have_http_status(:ok)
     end
   end
 end
