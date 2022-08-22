@@ -55,11 +55,13 @@ group :development, :test do
   gem 'debug', platforms: %i[mri mingw x64_mingw]
   gem 'capybara'
   gem 'rspec-rails'
+  gem 'pry', '~> 0.13.1'
+  gem 'rails-controller-testing'
+  gem 'rspec-rails', '~> 6.0.0.rc1'
 end
 
 group :development do
   # Use console on exceptions pages [https://github.com/rails/web-console]
-  gem 'rspec-rails'
   gem 'web-console'
   # Add speed badges [https://github.com/MiniProfiler/rack-mini-profiler]
   # gem "rack-mini-profiler"
