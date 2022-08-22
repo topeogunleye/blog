@@ -77,3 +77,16 @@ Give a ⭐️ if you like this project!
 ## 📝 License
 
 This project is [MIT](./MIT.md) licensed.
+
+first_user = User.create(name: 'Tom', photo: 'https://unsplash.com/photos/F_-0BxGuVvo', bio: 'Teacher from Mexico.')
+
+first_post = Post.create(author_id: first_user.id, title: 'Hello', text: 'This is my first post', comment_counter: 0, like_counter: 0)
+
+
+
+
+
+
+
+
+
