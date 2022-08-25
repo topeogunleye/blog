@@ -1,5 +1,6 @@
 class PostsController < ApplicationController
   before_action :authenticate_user!, only: %i[create destroy]
+  load_and_authorize_resource
   def index
     @posts = Post.where(author_id: params[:user_id]).order(created_at: :desc)
     @user = User.find(params[:user_id])
@@ -37,6 +38,14 @@ class PostsController < ApplicationController
         end
       end
     end
+  end
+
+  def destroy
+    @post = Post.find(params[:id])
+    @author = @post.author
+    @author.decrement!(:posts_counter)
+    @post.destroy!
+    redirect_to user_posts_path(id: @author.id), notice: 'Post was deleted successfully!'
   end
 
   private
