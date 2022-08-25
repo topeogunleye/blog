@@ -1,16 +1,24 @@
-# frozen_string_literal: true
-
 class Ability
   include CanCan::Ability
 
   def initialize(user)
-    # Define abilities for the user here. For example:
+    # Define abilities for the passed in user here. For example:
     #
-    #   return unless user.present?
-    #   can :read, :all
-    #   return unless user.admin?
-    #   can :manage, :all
-    #
+    if user.role == 'admin'
+      can :manage, :all
+    else
+      can :read, :all
+      can :create, Post, author_id: user.id
+      can :create, Comment, author_id: user.id
+      can :create, Like
+      can :destroy, Post do |post|
+        post.author_id == user.id
+      end
+      can :destroy, Comment do |comment|
+        comment.author_id == user.id
+      end
+    end
+
     # The first argument to `can` is the action you are giving the user
     # permission to do.
     # If you pass :manage it will apply to every action. Other common actions
@@ -24,9 +32,9 @@ class Ability
     # objects.
     # For example, here the user can only update published articles.
     #
-    #   can :update, Article, published: true
+    #   can :update, Article, :published => true
     #
     # See the wiki for details:
-    # https://github.com/CanCanCommunity/cancancan/blob/develop/docs/define_check_abilities.md
+    # https://github.com/CanCanCommunity/cancancan/wiki/Defining-Abilities
   end
 end
