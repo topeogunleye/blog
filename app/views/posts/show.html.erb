@@ -13,6 +13,9 @@
         <%= form_with model: @like, url: user_post_likes_path(post_id: @post.id) do |form| %>
           <%= form.submit "Like", class: "btn" %>
         <% end %>
+        <% if can? :destroy, @post %>
+          <%= button_to "Delete post", user_post_path(user_id: @post.author.id, post_id: @post.id), method: :delete, class: "btn"  %>
+        <% end %>
       <% end %>
       </div>
     </div>
@@ -22,6 +25,9 @@
         <% @post.comments.includes(:author).includes(:post).each do |comment| %>
         <li>
           <p><%= comment.author.name %>: <%= comment.text %></p>
+           <% if can? :destroy, comment %>
+            <%= button_to "Delete", user_post_comment_path(user_id: comment.author.id, post_id: comment.post.id, id: comment.id), method: :delete, class: "btn"  %>
+          <% end %>
         </li>
         <% end %>
       </ul>
