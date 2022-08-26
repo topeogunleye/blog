@@ -10,6 +10,8 @@ class UsersController < ApplicationController
       format.xml  { render :xml => @users }
       format.json { render :json => @users }
     end
+
+    render :json => User.all
   end
 
   # GET /users/1 or /users/1.json
