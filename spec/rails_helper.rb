@@ -75,7 +75,6 @@ end
 #
 # end
 
-driver = Selenium::WebDriver.for :edge
 options = Selenium::WebDriver::Options.edge
 driver = Selenium::WebDriver.for :edge, options: options
 
