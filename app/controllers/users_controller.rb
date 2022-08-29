@@ -4,6 +4,14 @@ class UsersController < ApplicationController
   # GET /users or /users.json
   def index
     @users = User.all
+
+    respond_to do |format|
+      format.html # index.html.erb
+      format.xml { render xml: @users }
+      format.json { render json: @users }
+    end
+
+    render json: User.all
   end
 
   # GET /users/1 or /users/1.json
