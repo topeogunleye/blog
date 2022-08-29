@@ -293,7 +293,7 @@ DEPENDENCIES
   rails-controller-testing
   rspec-rails (~> 6.0.0.rc1)
   rubocop (>= 1.0, < 2.0)
-  selenium-webdriver
+  selenium-webdriver (~> 4.4)
   sprockets-rails
   stimulus-rails
   turbo-rails

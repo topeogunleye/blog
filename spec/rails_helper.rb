@@ -62,3 +62,21 @@ RSpec.configure do |config|
   # arbitrary gems may also be filtered via:
   # config.filter_gems_from_backtrace("gem name")
 end
+
+# RSpec.describe 'Install Drivers' do
+#
+#   it 'edge session', exclude: {platform: :linux} do
+#     require 'webdrivers'
+#
+#     driver = Selenium::WebDriver.for :edge
+#
+#     driver.quit
+#   end
+#
+# end
+
+driver = Selenium::WebDriver.for :edge
+options = Selenium::WebDriver::Options.edge
+driver = Selenium::WebDriver.for :edge, options: options
+
+driver.quit
