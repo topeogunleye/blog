@@ -3,10 +3,12 @@ require 'rails_helper'
 RSpec.describe 'Users pages test', type: :feature do
   describe 'index page' do
     before :each do
-      @user_first = User.create(name: 'Temitope', photo: 'user.png', bio: 'A cute baby', email: 'topeogunleye1@gmail.com', password: 'Ygpcznj3BCSt$&bc')
-      @user_second = User.create(name: 'Superman', photo: 'user.png', bio: 'A beautiful lady' , email: 'example@email.com', password: 'thomas123')
-      @user_third = User.create(name: 'Roseline', photo: 'user.png', bio: 'A good guy', email: 'tofu@gmailcom', password: 'tytyyt')
-
+      @user_first = User.create(name: 'Temitope', photo: 'user.png', bio: 'A cute baby',
+                                email: 'topeogunleye1@gmail.com', password: 'Ygpcznj3BCSt$&bc')
+      @user_second = User.create(name: 'Superman', photo: 'user.png', bio: 'A beautiful lady',
+                                 email: 'example@email.com', password: 'thomas123')
+      @user_third = User.create(name: 'Roseline', photo: 'user.png', bio: 'A good guy', email: 'tofu@gmailcom',
+                                password: 'tytyyt')
 
       @user_first.save
       @user_second.save
