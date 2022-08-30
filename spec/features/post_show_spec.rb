@@ -2,7 +2,7 @@ require 'rails_helper'
 
 describe 'show page' do
   before :each do
-    @user_first = User.create(name: 'Temitope', photo: 'user.png', bio: 'This is first user')
+    @user_first = User.create(name: 'Temitope', photo: 'user.png', bio: 'A cute baby', email: 'topeogunleye1@gmail.com', password: 'Ygpcznj3BCSt$&bc')
 
     @post_first = @user_first.posts.new(title: 'Self Improvement is the goal', text: 'This is my first post')
     @post_first.likes_counter = 0
@@ -27,6 +27,11 @@ describe 'show page' do
     @like.author = @user_first
     @like.post = @post_first
     @like.save
+
+    visit root_path
+    fill_in 'Email', with: 'topeogunleye1@gmail.com'
+    fill_in 'Password', with: 'Ygpcznj3BCSt$&bc'
+    click_button 'Log in'
   end
 
   describe "display post's title" do
