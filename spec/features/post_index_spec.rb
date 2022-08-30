@@ -2,7 +2,8 @@ require 'rails_helper'
 
 describe 'index page' do
   before :each do
-    @user_first = User.create(name: 'Temitope', photo: 'user.png', bio: 'This is first user')
+    @user_first = User.create(name: 'Temitope', photo: 'user.png', bio: 'This is first user',
+                              email: 'topeogunleye1@gmail.com', password: 'Ygpcznj3BCSt$&bc')
 
     @post_first = @user_first.posts.new(title: 'Self Improvement is the goal', text: 'This is my first post')
     @post_first.likes_counter = 0
@@ -27,6 +28,11 @@ describe 'index page' do
     @like.author = @user_first
     @like.post = @post_first
     @like.save
+
+    visit root_path
+    fill_in 'Email', with: 'topeogunleye1@gmail.com'
+    fill_in 'Password', with: 'Ygpcznj3BCSt$&bc'
+    click_button 'Log in'
   end
 
   describe 'check users#index path' do
@@ -44,8 +50,9 @@ describe 'index page' do
   end
 
   it 'Should display the total post number of 3' do
-    visit '/'
-    expect(page).to have_content('Number of posts: 3')
+    all(:css, '.number_posts').each do |post|
+      expect(post).to have_content('Number of posts:')
+    end
   end
 
   it 'Should display post title' do
