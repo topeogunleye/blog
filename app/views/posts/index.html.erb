@@ -10,7 +10,6 @@
             <%= link_to "Add a post",new_user_post_path(@user), method: :get, class: "btn right" %>
           <% end %>
         </div>
-        <button>Next</button>
       </div>
     </div>
   </section>
@@ -35,6 +34,8 @@
                 <% end %>
               </ul>
             </div>
+            <%= button_to "Delete", user_post_path(user_id: post.author_id, id: post.id), method: :delete %>
+
           </li>
         <% end %>
       <% end %>
