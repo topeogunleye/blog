@@ -52,11 +52,10 @@ The following tools help make easier to work with sample code.
 - Twitter: [@tope_leye](https://twitter.com/tope_leye)
 - LinkedIn: [ogunleye](https://linkedin.com/in/ogunleye)
 
-👤 **Roland Ossisa Yuma**
+👤 **Author1**
 
-- **GitHub**: [@rolandfbk](https://github.com/rolandfbk)
-- **LinkedIn**: [Roland Ossisa Yuma](https://linkedin.com/in/roland-ossisa-yuma-4595547b)
-- **Twitter**: [@rolandfbk](https://twitter.com/rolandfbk)
+- GitHub: [@jasonfelice](https://github.com/jasonfelice)
+- LinkedIn: [LinkedIn](https://www.linkedin.com/in/jake-felice/)
 
 ## 🤝 Contributing
 
