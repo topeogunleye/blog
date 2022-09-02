@@ -8,6 +8,6 @@ class Comment < ApplicationRecord
   end
 
   def as_json(_options = {})
-    { id: id, text: text, post_id: post_id }
+    { id:, text:, post_id: }
   end
 end
