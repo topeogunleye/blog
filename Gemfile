@@ -7,6 +7,10 @@ gem 'rubocop', '>= 1.0', '< 2.0'
 
 gem 'cancancan'
 
+gem 'jwt'
+
+gem 'rswag'
+
 gem 'devise'
 
 gem 'bullet', group: 'development'
