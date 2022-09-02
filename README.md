@@ -52,7 +52,7 @@ The following tools help make easier to work with sample code.
 - Twitter: [@tope_leye](https://twitter.com/tope_leye)
 - LinkedIn: [ogunleye](https://linkedin.com/in/ogunleye)
 
-👤 **Jason Felix**
+👤 **Jason Felice**
 
 - GitHub: [@jasonfelice](https://github.com/jasonfelice)
 - LinkedIn: [LinkedIn](https://www.linkedin.com/in/jake-felice/)
