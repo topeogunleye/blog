@@ -25,11 +25,6 @@ RSpec.describe Post, type: :model do
     expect(post).to_not be_valid
   end
 
-  it 'should return posts_counter increment atfer saving the user' do
-    post = Post.create(author_id: @user.id, title: 'test', text: 'test')
-    expect(@user.posts_counter).to eq(1)
-  end
-
   it 'title should not exceed 250 characters' do
     post = Post.create(author_id: @user.id, title: 'a' * 251, text: 'test')
     expect(post).to_not be_valid

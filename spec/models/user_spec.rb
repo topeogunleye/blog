@@ -18,5 +18,4 @@ RSpec.describe User, type: :model do
     user = User.create(name: 'test', bio: 'test')
     expect(user).to_not be_valid
   end
-
 end
