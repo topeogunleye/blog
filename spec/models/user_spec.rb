@@ -9,13 +9,4 @@ RSpec.describe User, type: :model do
     expect(@user).to be_valid
   end
 
-  it 'should not create a user without a name' do
-    user = User.create(photo: 'https://unsplash.com/photos/', bio: 'test')
-    expect(user).to_not be_valid
-  end
-
-  it 'should not create a user without a photo' do
-    user = User.create(name: 'test', bio: 'test')
-    expect(user).to_not be_valid
-  end
 end

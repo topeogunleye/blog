@@ -14,11 +14,10 @@ class Post < ApplicationRecord
   def recents_comments
     comments.order(created_at: :desc).includes([:author]).limit(5)
   end
-  
+
   def update_post_counter
     user = User.find(author_id)
     user.increment(:posts_counter)
     user.save
   end
-
 end
