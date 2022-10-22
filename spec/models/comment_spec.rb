@@ -10,7 +10,7 @@ RSpec.describe Comment, type: :model do
     comment = Comment.create(author_id: @user.id, post_id: @post.id, text: 'test', user_id: @user.id)
     expect(comment).to be_valid
   end
-  
+
   it 'should not create a comment without an author' do
     comment = Comment.create(post_id: @post.id, text: 'test')
     expect(comment).to_not be_valid

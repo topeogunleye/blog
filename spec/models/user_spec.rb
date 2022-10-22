@@ -8,5 +8,4 @@ RSpec.describe User, type: :model do
   it 'should create a user' do
     expect(@user).to be_valid
   end
-
 end

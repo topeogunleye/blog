@@ -15,15 +15,13 @@ RSpec.describe Post, type: :model do
     expect(post).to_not be_valid
   end
 
-
   it 'should not create a post without an author' do
     post = Post.create(title: 'test', text: 'test', user_id: @user.id)
     expect(post).to_not be_valid
   end
 
   it 'title should not exceed 250 characters' do
-    post = Post.create(author_id: @user.id, title: 'a' * 251, text: 'test', user_id: @user.id)  
+    post = Post.create(author_id: @user.id, title: 'a' * 251, text: 'test', user_id: @user.id)
     expect(post).to_not be_valid
   end
-
 end
